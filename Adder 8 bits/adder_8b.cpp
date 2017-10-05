@@ -62,13 +62,13 @@ Adder8b::Adder8b(sc_module_name nm) : sc_module(nm) {
 }
 
 Adder8b::~Adder8b() {
-  /*delete fa1;
+  delete fa1;
   delete fa2;
   delete fa3;
   delete fa4;
   delete fa5;
   delete fa6;
   delete fa7;
-  delete fa8;*/
+  delete fa8;
 }
 

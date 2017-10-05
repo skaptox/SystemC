@@ -1,7 +1,7 @@
 // Copyright (c) 2017 Oscar Albornoz.
 
-#ifndef ADDER8B_TESTBENCH_H_
-#define ADDER8B_TESTBENCH_H_
+#ifndef TESTBENCH_H_
+#define TESTBENCH_H_
 #include <systemc.h>
 #include <iostream>
 
@@ -20,4 +20,4 @@ class Testbench : public sc_module {
   void print();
 };
 
-#endif  // ADDER8B_TESTBENCH_H_
+#endif  // TESTBENCH_H_

@@ -1,7 +1,7 @@
 // Copyright (c) 2017 Oscar Albornoz.
 
-#ifndef ADDER8B_FULLADDER_H_
-#define ADDER8B_FULLADDER_H_
+#ifndef FULL_ADDER_H_
+#define FULL_ADDER_H_
 
 #include <and_gate.h>
 #include <or_gate.h>
@@ -26,6 +26,6 @@ class FullAdder: public sc_module {
   sc_signal<bool> sg_1, sg_2, sg_3;
 };
 
-#endif  // ADDER8B_FULLADDER_H_
+#endif  // FULL_ADDER_H_
 
 

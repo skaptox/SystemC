@@ -1,7 +1,7 @@
 // Copyright (c) 2017 Oscar Albornoz.
 
-#ifndef ADDER8B_SUMADOR8B_H_
-#define ADDER8B_SUMADOR8B_H_
+#ifndef ADDER_8B_H_
+#define ADDER_8B_H_
 
 #include <full_adder.h>
 #include <systemc.h>
@@ -21,6 +21,6 @@ class Adder8b: public sc_module {
   sc_signal<bool> sg_0, sg_1, sg_2, sg_3, sg_4, sg_5, sg_6, sg_7, sg_8;
 };
 
-#endif  // ADDER8B_SUMADOR8B_H_
+#endif  // ADDER_8B_H_
 
 

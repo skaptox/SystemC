@@ -1,7 +1,7 @@
 // Copyright (c) 2017 Oscar Albornoz.
 
-#ifndef ADDER8B_XOR_GATE_H_
-#define ADDER8B_XOR_GATE_H_
+#ifndef XOR_GATE_H_
+#define XOR_GATE_H_
 #include <systemc.h>
 
 class XorGate : public sc_module {
@@ -16,7 +16,7 @@ class XorGate : public sc_module {
   void operation();
 };
 
-#endif  // ADDER8B_XOR_GATE_H_
+#endif  // XOR_GATE_H_
 
 
 

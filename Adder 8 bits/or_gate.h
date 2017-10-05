@@ -1,7 +1,7 @@
 // Copyright (c) 2017 Oscar Albornoz.
 
-#ifndef ADDER8B_OR_GATE_H_
-#define ADDER8B_OR_GATE_H_
+#ifndef OR_GATE_H_
+#define OR_GATE_H_
 #include <systemc.h>
 
 class OrGate : public sc_module {
@@ -16,7 +16,7 @@ class OrGate : public sc_module {
   void operation();
 };
 
-#endif  // ADDER8B_OR_GATE_H_
+#endif  // OR_GATE_H_
 
 
 

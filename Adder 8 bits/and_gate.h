@@ -1,7 +1,7 @@
 // Copyright (c) 2017 Oscar Albornoz.
 
-#ifndef ADDER8B_AND_GATE_H_
-#define ADDER8B_AND_GATE_H_
+#ifndef AND_GATE_H_
+#define AND_GATE_H_
 
 #include <systemc.h>
 
@@ -18,7 +18,7 @@ class AndGate : public sc_module {
   void operation();
 };
 
-#endif  // ADDER8B_AND_GATE_H_
+#endif  // AND_GATE_H_
 
 
 
