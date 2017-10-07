@@ -8,6 +8,8 @@ testbench::testbench(sc_module_name nm) : sc_module(nm) {
 }
 testbench::~testbench() {}
 void testbench::test() {
+
+  /*
   // se utilizan dos wait()debido a que como el registro escribe y lee en
   // flancos diferentes del reloj
   // no se podria notar de forma inmediata el cambio (la lectura y la escritura)
@@ -38,9 +40,12 @@ void testbench::test() {
   wait();
   printf();
   sc_stop();
+  */
 }
 
 void testbench::printf() {
+
+  /*
   cout << sc_time_stamp() << "\t" << data_out.read() << "\t\t" <<
   enable_out.read() << "\t\t" << data_in.read() << endl;
 

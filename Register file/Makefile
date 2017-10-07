@@ -3,7 +3,7 @@
 #----------------------------------------------------------------------------------------
 
 # Especificar los archivos .cpp en SRCS y los archivos .h en SRCH
-SRCS = testbench.cpp main.cpp
+SRCS = and_gate.cpp not_gate.cpp decoder.cpp testbench.cpp main.cpp
 
 TARGET = test
 SYSTEMC = /usr/local/systemc-2.3.1
@@ -12,7 +12,7 @@ LIBDIR = -L. -L.. -L$(SYSTEMC)/lib-linux/
 LIBS   = -lsystemc -lm
 
 CC     = clang++
-CFLAGS = -g -Wno-deprecated -Wall
+CFLAGS = -g -Wno-deprecated -Wall -std=c++11
 OBJS   = $(SRCS:.cpp=.o)
 
 OTHER  = -Wl,-rpath=/$(SYSTEMC)/lib-linux

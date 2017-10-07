@@ -4,6 +4,7 @@
 #include <iostream>
 
 class testbench : public sc_module{
+
  public:
   sc_in<bool> clk_in;
   sc_out<bool> enable_out;

@@ -1,6 +1,6 @@
 // Copyright (c) 2017 Oscar Albornoz.
 
-#include "./register.h"
+#include "./decoder.h"
 #include "./testbench.h"
 
 int sc_main(int argc, char *argv[]) {
@@ -8,8 +8,10 @@ int sc_main(int argc, char *argv[]) {
   sc_time DELAY(10, SC_NS);
   sc_clock clock("clock", PERIOD, 0.5, DELAY, true);
 
-  Register reg("reg");
+  Decoder dec("dec");
   testbench tb("tb");
+
+  /*
 
   sc_signal<bool> enable_sg;
   sc_signal<sc_int<kSize> >  data_sent_sg,  data_received_sg;
@@ -24,5 +26,7 @@ int sc_main(int argc, char *argv[]) {
   tb.enable_out(enable_sg);
   tb.data_in(data_received_sg);
   sc_start();
+
+  */
   return 0;
 }

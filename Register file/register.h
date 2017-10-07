@@ -11,8 +11,8 @@ const size_t kSize = 32;
 class Register : public sc_module {
  public:
   sc_in<bool> clk_in, enable_in;
-  sc_in<sc_int<kSize> > data_in;
-  sc_out<sc_int<kSize> > data_out;
+  sc_in< sc_int<kSize> > data_in;
+  sc_out< sc_int<kSize> > data_out;
   sc_int<kSize> data;
 
   SC_CTOR(Register) {
