@@ -15,7 +15,7 @@ CC     = clang++
 CFLAGS = -g -Wno-deprecated -Wall
 OBJS   = $(SRCS:.cpp=.o)
 
-OTHER  = -Wl,-rpath=/$(SYSTEMC)/lib-linux -lsystemc
+OTHER  = -Wl,-rpath=/$(SYSTEMC)/lib-linux
 
 EXE    = $(TARGET)
 
@@ -33,5 +33,4 @@ clean:
 	rm -f $(OBJS) *~ $(EXE) *.bak $(TARGET).stackdump *.vcd
 
 exp:
-	export LD_LIBRARY_PATH=/home/usuarios/is/systemc/lib-linux
 	export LD_LIBRARY_PATH=$(SYSTEMC)/lib-linux
