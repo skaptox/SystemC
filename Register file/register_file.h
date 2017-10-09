@@ -6,34 +6,31 @@
 #include <systemc.h>
 #include <iostream>
 
-const size_t kSize = 32;
+#include "./decoder.h"
+#include "./multiplexer.h"
+#include "./register.h"
 
-class Register : public sc_module {
+typedef sc_int<32> Data;
+typedef sc_int<32> size;
+
+class RegisterFile : public sc_module {
  public:
-  sc_in<bool> clk_in, enable_in;
-  sc_in< sc_int<kSize> > data_in;
-  sc_out< sc_int<kSize> > data_out;
-  sc_int<kSize> data;
+  sc_in<bool> clk_in, X_in[3];
+  sc_in<Data> data_in;
+  sc_in<size> select;
+  sc_out<Data> data_out[4];
 
-  SC_CTOR(Register) {
-    data = 0;
 
-    SC_METHOD(write);
-    sensitive << clk_in.neg();
-
-    SC_METHOD(read);
-    sensitive << clk_in.pos();
-  }
+  SC_CTOR(RegisterFile);
+  ~RegisterFile();
 
  private:
-  void write() {
-    if (enable_in.read() == true) {
-      data = data_in.read();
-    }
-  }
+  Decoder *dec;
+  Multiplexer *mul[4];
 
-  void read() {
-    data_out.write(data);
-  }
+  Register *reg[8];
+  sc_signal<bool> b_sg[8];
+  sc_signal<Data> c_sg[8];
+
 };
 #endif  // REGISTER_FILE_H_

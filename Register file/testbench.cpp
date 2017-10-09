@@ -1,57 +1,96 @@
 // Copyright (c) 2017 Oscar Albornoz.
 
 #include "./testbench.h"
-
-testbench::testbench(sc_module_name nm) : sc_module(nm) {
+testbench :: testbench(sc_module_name nm) : sc_module(nm)
+{
   SC_THREAD(test);
-    sensitive << clk_in.neg();
+    sensitive<<clk_in.neg();
 }
-testbench::~testbench() {}
-void testbench::test() {
+testbench :: ~testbench(){}
 
-  /*
-  // se utilizan dos wait()debido a que como el registro escribe y lee en
-  // flancos diferentes del reloj
-  // no se podria notar de forma inmediata el cambio (la lectura y la escritura)
-  cout << "\n\tdata_in\tenable\tdata_out(data_in_the_register)" << endl;
 
-  enable_out.write(1);
-  data_out.write(15);
+void testbench::test(){
+  cout<<"X0\tX1\tX2\tNum\tSele\tOut0\tOut01\tOut02\tOut03"<<endl;
+
+  X_out[0].write(0);
+  X_out[1].write(0);
+  X_out[2].write(0);
+
+  data_out.write(50);
+  select.write(7);
+
   wait();
-  printf();
+  print();
 
-  enable_out.write(0);
+  X_out[0].write(0);
+  X_out[1].write(0);
+  X_out[2].write(1);
+  data_out.write(57);
+  select.write(0);
+
+  wait();
+  print();
+
+  X_out[0].write(0);
+  X_out[1].write(1);
+  X_out[2].write(0);
+  data_out.write(14);
+  select.write(2);
+
+  wait();
+  print();
+
+  X_out[0].write(1);
+  X_out[1].write(0);
+  X_out[2].write(0);
+  data_out.write(12);
+  select.write(3);
+
+  wait();
+  print();
+
+  X_out[0].write(0);
+  X_out[1].write(1);
+  X_out[2].write(1);
   data_out.write(20);
-  wait();
-  printf();
+  select.write(4);
 
-  enable_out.write(0);
-  data_out.write(3);
   wait();
-  printf();
+  print();
 
-  enable_out.write(1);
-  data_out.write(30);
-  wait();
-  printf();
+  X_out[0].write(1);
+  X_out[1].write(0);
+  X_out[2].write(1);
+  data_out.write(24);
+  select.write(5);
 
-  enable_out.write(0);
-  data_out.write(7);
   wait();
-  printf();
+  print();
+
+  X_out[0].write(1);
+  X_out[1].write(1);
+  X_out[2].write(0);
+  data_out.write(11);
+  select.write(6);
+
+  wait();
+  print();
+
+  X_out[0].write(1);
+  X_out[1].write(1);
+  X_out[2].write(1);
+  data_out.write(6);
+  select.write(7);
+
+  wait();
+  print();
+
   sc_stop();
-  */
 }
 
-void testbench::printf() {
-
-  /*
-  cout << sc_time_stamp() << "\t" << data_out.read() << "\t\t" <<
-  enable_out.read() << "\t\t" << data_in.read() << endl;
-
-  /*
-  sc_time_stamp() << "\t" << data_out.read().to_string(SC_BIN) << "\t\t" <<
-  enable_out.read() << "\t\t" << data_in.read().to_string(SC_BIN) << endl;
-  */
+void testbench::print() {
+  cout << X_out[0].read()<<"\t"<<X_out[1].read()<<"\t"<<X_out[2].read()<<"\t"<<data_out.read()<<"\t"
+  <<select.read()<<"\t"<<data_in[0].read()<<"\t"<<data_in[1].read()<<"\t"<<data_in[2].read()<<"\t"
+  <<data_in[3].read()<<"\t"<<endl;
 }
 

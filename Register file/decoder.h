@@ -19,7 +19,7 @@ class Decoder : public sc_module{
  private:
   AndGate3* _and[8];
   NotGate* _not[3];
-  sc_signal<bool> _sg[3];
+  sc_signal<bool> not_sg[3];
 };
 
 #endif  // DECODER_7S_H_

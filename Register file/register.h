@@ -6,14 +6,14 @@
 #include <systemc.h>
 #include <iostream>
 
-const size_t kSize = 32;
+typedef sc_int<32> Data;
 
 class Register : public sc_module {
  public:
   sc_in<bool> clk_in, enable_in;
-  sc_in< sc_int<kSize> > data_in;
-  sc_out< sc_int<kSize> > data_out;
-  sc_int<kSize> data;
+  sc_in<Data> data_in;
+  sc_out<Data> data_out;
+  Data  data;
 
   SC_CTOR(Register) {
     data = 0;

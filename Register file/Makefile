@@ -3,7 +3,7 @@
 #----------------------------------------------------------------------------------------
 
 # Especificar los archivos .cpp en SRCS y los archivos .h en SRCH
-SRCS = and_gate.cpp not_gate.cpp decoder.cpp testbench.cpp main.cpp
+SRCS = and_gate.cpp not_gate.cpp decoder.cpp testbench.cpp main.cpp register_file.cpp
 
 TARGET = test
 SYSTEMC = /usr/local/systemc-2.3.1
