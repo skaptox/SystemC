@@ -9,13 +9,13 @@
 
 #include <iostream>
 
-class Decoder7s: public sc_module{
+class Decoder: public sc_module{
  public:
   sc_in<bool> A_in, B_in, C_in, D_in;;
   sc_out<bool> a_out, b_out, c_out, d_out, e_out, f_out, g_out;
 
-  SC_CTOR(Decoder7s);
-  ~Decoder7s();
+  SC_CTOR(Decoder);
+  ~Decoder();
 
  private:
   AndGate *andAB, *andBD, *andCD;
